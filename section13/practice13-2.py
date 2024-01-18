@@ -1,0 +1,11 @@
+prev_file = open("연락처.txt", 'r', encoding='utf-8')
+buffer = prev_file.read()
+n = buffer.count("011-")
+buffer = buffer.replace("011-", "010-")
+print(f'총 {n}건의 011 데이터를 찾았습니다.')
+prev_file.close()
+
+new_file = open("연락처_new.txt", 'w', encoding='utf-8')
+new_file.write(buffer)
+new_file.close()
+print("모든 데이터를 수정했습니다.")
